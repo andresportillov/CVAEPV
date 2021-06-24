@@ -1,0 +1,79 @@
+<div class="container mt-5">
+    <div class="card mb-3" style="border-radius: 20px;">
+        <div class="row g-5">
+            <div class="col-md-4 d-none d-md-block">
+                <img src="https://i.imgur.com/37Czp8z.jpg" style="border-radius: 20px; border: 2px solid;" width="400px" height="750px" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title">Education</h4>
+                    <hr>
+                    <div *ngIf="loading" class="text-center animated fadeIn faster mt-2">
+                        <h4 class="alert-heading">Cargando</h4>
+                        <p>
+                            <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+                        </p>
+                        <p class="mb-0">
+                            Espere Porfavor
+                        </p>
+                    </div>
+                    <div *ngIf="!loading && educations.length > 0 && courses.length > 0 " class="table-responsive-sm">
+                        <h5>Professional Training: </h5>
+                        <table class="table mt-4 animated fadeIn faster">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="col">Information</th>
+                                    <th scope="col">Academy</th>
+                                    <th scope="col">degree</th>
+                                    <th scope="col">from</th>
+                                    <th scope="col">to</th>
+                                    <th scope="col">levels</th>
+                                    <th scope="col">study</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let education of educations; let i = index">
+                                    <th scope="row" class="text-center">
+                                        <button class="text-center btn btn-outline-dark" (click)='getInfoEducation(education.comment, i)'>
+                          <i class="fas fa-university"></i>
+                        </button>
+                                    </th>
+                                    <td><strong>{{education.Academy}}</strong></td>
+                                    <td>{{education.degree}}</td>
+                                    <td>{{education.from}}</td>
+                                    <td>{{education.to}}</td>
+                                    <td>{{education.levels}}</td>
+                                    <td><strong>{{education.study}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div *ngIf="!loading && courses.length > 0" class="table-responsive-sm">
+                        <h5>Courses:</h5>
+                        <table class="table mt-4 animated fadeIn faster">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="col">#</th>
+                                    <th scope="col">Academy</th>
+                                    <th scope="col">degree</th>
+                                    <th scope="col">levels</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let course of courses; let i = index">
+                                    <th scope="row"><i class="fas fa-certificate"></i></th>
+                                    <td><strong>{{course.academy}}</strong></td>
+                                    <td>{{course.degree}}</td>
+                                    <td>{{course.levels}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,28 @@
+.movil {
+    font-size: 30px;
+}
+
+.movil-text {
+    font-size: 1rem;
+}
+
+.movil-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+}
+
+@media only screen and (max-width: 425px) {
+    .movil {
+        font-size: 15px;
+    }
+    .movil-text {
+        font-size: 0.5rem;
+    }
+    .movil-footer {
+        position: sticky;
+        height: 60px;
+    }
+}

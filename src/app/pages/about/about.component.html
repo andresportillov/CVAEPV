@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <div class="card mb-3" style="border-radius: 20px;">
+        <div class="row g-5">
+            <div class="col-md-4 col-sm-0 d-none d-md-block">
+                <img src="assets/img/prub1.jpg" style="border-radius: 20px; border: 2px solid;" width="400px" alt="...">
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <div class="card-body">
+                    <h5 class="card-title">About Me</h5>
+                    <hr>
+                    <div *ngIf="loading" class="text-center animated fadeIn faster mt-2">
+                        <h4 class="alert-heading">Cargando</h4>
+                        <p>
+                            <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+                        </p>
+                        <p class="mb-0">
+                            Espere Porfavor
+                        </p>
+                    </div>
+                    <div *ngIf="!loading && abouts.length > 0">
+                        <p *ngFor="let about of abouts;" class="card-text">{{about.comment}}</p>
+                        <table *ngIf="!loading" class="table mt-2 mb-0 animated fadeIn faster">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Skills</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let skill of skills; let i=index">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>{{skill.skill}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table *ngIf="!loading" class="table mt-2 mb-0 animated fadeIn faster">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Abilities</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let ability of abilities; let i=index">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>{{ability.ability}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

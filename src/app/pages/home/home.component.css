@@ -1,0 +1,17 @@
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h5.h21 {
+    color: white;
+    left: 50px;
+    position: relative;
+    width: 150px;
+  }
